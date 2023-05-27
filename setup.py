@@ -22,7 +22,7 @@ setup(
     install_requires=requirements,
     entry_points = {
         'awx.credential_plugins': [
-            'example_plugin = awx_custom_credential_plugin_example:example_plugin',
+            'erpm_plugin = awx_custom_credential_plugin_example:erpm_plugin',
         ]
     }
 )
