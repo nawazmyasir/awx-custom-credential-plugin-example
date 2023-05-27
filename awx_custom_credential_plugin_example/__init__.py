@@ -10,20 +10,29 @@ def some_lookup_function(**kwargs):
     # (*this* code is just provided for the sake of example)
     #
     url = kwargs.get('url')
-    token = kwargs.get('token')
-    identifier = kwargs.get('identifier')
+    username = kwargs.get('username')
+    password = kwargs.get('password')
+    
+    account_name = kwargs.get('account_name')
+    shared_credential_list = kwargs.get('shared_credential_list')
+    system_name = kwargs.get('system_name')
 
-    if token != 'VALID':
-        raise ValueError('Invalid token!')
+
+    if account_name != 'VALID':
+        raise ValueError('Invalid Account!')
+    if shared_credential_list != 'VALID':
+        raise ValueError('Invalid shared_credential_list')
+    if system_name != 'VALID':
+        raise ValueError('Invalid system name')
 
     value = {
-        'username': 'mary',
+        'shared_credential_list': 'AnsibleSCL',
         'email': 'mary@example.org',
         'password': 'super-secret'
     }
 
-    if identifier in value:
-        return value[identifier]
+    if shared_credential_list in value:
+        return value[shared_credential_list]
 
     raise ValueError(f'Could not find a value for {identifier}.')
 
@@ -49,21 +58,31 @@ example_plugin = CredentialPlugin(
     inputs={
         'fields': [{
             'id': 'url',
-            'label': 'Server URL',
+            'label': 'ERPM Server URL',
             'type': 'string',
         }, {
-            'id': 'token',
-            'label': 'Authentication Token',
+            'id': 'password',
+            'label': 'Password',
             'type': 'string',
             'secret': True,
         }],
         'metadata': [{
-            'id': 'identifier',
-            'label': 'Identifier',
+            'id': 'account_name',
+            'label': 'Account Name',
             'type': 'string',
-            'help_text': 'The name of the key in My Credential System to fetch.'
+            'help_text': 'The name of Account in ERPM System to fetch.'
+        },{
+            'id': 'shared_credential_list',
+            'label': 'Share Credential List Name',
+            'type': 'string',
+            'help_text': 'The name of the Shared Credential List in ERPM System to fetch.'
+        },{
+            'id': 'system_name',
+            'label': 'System Name',
+            'type': 'string',
+            'help_text': 'The name of the System in My Credential System to fetch.'
         }],
-        'required': ['url', 'token', 'secret_key'],
+        'required': ['url', 'username', 'password', 'account_name', 'shared_credential_list', 'system_name'],
     },
     # backend is a callable function which will be passed all of the values
     # defined in `inputs`; this function is responsible for taking the arguments,
