@@ -6,7 +6,7 @@ requirements = []  # add Python dependencies here
 # e.g., requirements = ["PyYAML"]
 
 setup(
-    name='erpm',
+    name='awx-custom-credential-plugin-example',
     version='0.1',
     author='Ansible, Inc.',
     author_email='info@ansible.com',
@@ -22,7 +22,7 @@ setup(
     install_requires=requirements,
     entry_points = {
         'awx.credential_plugins': [
-            'erpm_plugin = erpm:erpm_plugin',
+            'erpm_plugin = awx-custom-credential-plugin-example:erpm_plugin',
         ]
     }
 )
