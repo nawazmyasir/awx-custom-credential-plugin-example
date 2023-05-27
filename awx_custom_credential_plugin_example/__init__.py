@@ -36,8 +36,8 @@ def get_password(**kwargs):
 
     raise ValueError(f'Could not find a value for {identifier}.')
 
-example_plugin = CredentialPlugin(
-    'Example AWX Credential Plugin',
+erpm_plugin = CredentialPlugin(
+    'ERPM',
     # see: https://docs.ansible.com/ansible-tower/latest/html/userguide/credential_types.html
     # inputs will be used to create a new CredentialType() instance
     #
