@@ -74,7 +74,7 @@ example_plugin = CredentialPlugin(
             'label': 'Account Name',
             'type': 'string',
         },{
-            'id': shared_credential_list',
+            'id': 'shared_credential_list',
             'label': 'Shared Credential Liste',
             'type': 'string',
         }],
