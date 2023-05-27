@@ -36,8 +36,8 @@ def get_password(**kwargs):
 
     raise ValueError(f'Could not find a value for {shared_credential_list}.')
 
-erpm_plugin = CredentialPlugin(
-    'erpm',
+example_plugin = CredentialPlugin(
+    'Example AWX Credential Plugin',
     # see: https://docs.ansible.com/ansible-tower/latest/html/userguide/credential_types.html
     # inputs will be used to create a new CredentialType() instance
     #
