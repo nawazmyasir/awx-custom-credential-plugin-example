@@ -2,7 +2,7 @@ import collections
 
 CredentialPlugin = collections.namedtuple('CredentialPlugin', ['name', 'inputs', 'backend'])
 
-def some_lookup_function(**kwargs):
+def get_password(**kwargs):
     #
     # IMPORTANT:
     # replace this section of code with Python code that *actually*
@@ -36,7 +36,7 @@ def some_lookup_function(**kwargs):
 
     raise ValueError(f'Could not find a value for {identifier}.')
 
-example_plugin = CredentialPlugin(
+erpm_plugin = CredentialPlugin(
     'Example AWX Credential Plugin',
     # see: https://docs.ansible.com/ansible-tower/latest/html/userguide/credential_types.html
     # inputs will be used to create a new CredentialType() instance
@@ -89,5 +89,5 @@ example_plugin = CredentialPlugin(
     # interacting with the third party credential management system in question
     # using Python code, and returning the value from the third party
     # credential management system
-    backend = some_lookup_function
+    backend = get_password()
 )
