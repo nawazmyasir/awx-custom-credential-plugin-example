@@ -89,5 +89,5 @@ example_plugin = CredentialPlugin(
     # interacting with the third party credential management system in question
     # using Python code, and returning the value from the third party
     # credential management system
-    backend = get_password()
+    backend = get_password
 )
