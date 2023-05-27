@@ -60,27 +60,29 @@ example_plugin = CredentialPlugin(
             'id': 'url',
             'label': 'ERPM Server URL',
             'type': 'string',
-        }, {
+        },{
             'id': 'password',
             'label': 'Password',
             'type': 'string',
             'secret': True,
-        }],
-        'metadata': [{
-            'id': 'account_name',
-            'label': 'Account Name',
-            'type': 'string',
-            'help_text': 'The name of Account in ERPM System to fetch.'
-        },{
-            'id': 'shared_credential_list',
-            'label': 'Share Credential List Name',
-            'type': 'string',
-            'help_text': 'The name of the Shared Credential List in ERPM System to fetch.'
         },{
             'id': 'system_name',
             'label': 'System Name',
             'type': 'string',
-            'help_text': 'The name of the System in My Credential System to fetch.'
+        },{
+            'id': 'account_name',
+            'label': 'Account Name',
+            'type': 'string',
+        },{
+            'id': shared_credential_list',
+            'label': 'Shared Credential Liste',
+            'type': 'string',
+        }],
+        'metadata': [{
+            'id': 'shared_credential_list',
+            'label': 'Share Credential List Name',
+            'type': 'string',
+            'help_text': 'The name of the Shared Credential List in ERPM System to fetch.'
         }],
         'required': ['url', 'username', 'password', 'account_name', 'shared_credential_list', 'system_name'],
     },
