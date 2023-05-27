@@ -34,10 +34,10 @@ def get_password(**kwargs):
     if shared_credential_list in value:
         return value[shared_credential_list]
 
-    raise ValueError(f'Could not find a value for {identifier}.')
+    raise ValueError(f'Could not find a value for {shared_credential_list}.')
 
 erpm_plugin = CredentialPlugin(
-    'ERPM',
+    'erpm',
     # see: https://docs.ansible.com/ansible-tower/latest/html/userguide/credential_types.html
     # inputs will be used to create a new CredentialType() instance
     #
